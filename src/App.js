@@ -1,12 +1,14 @@
-import './App.css';
-import TodoForm from './components/TodoForm';
+import React from 'react';
+import { RiCloseCircleLine } from 'react-icons/ri';
 import TodoList from './components/TodoList';
+import './App.css';
 
 
-function App() {
+function App() { 
   return (
     <div className="todo-app">
       <p>todo list app react</p>
+      <RiCloseCircleLine />
       <TodoList/>
     </div>
   );
