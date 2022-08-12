@@ -1,5 +1,4 @@
 import React from 'react';
-import { RiCloseCircleLine } from 'react-icons/ri';
 import TodoList from './components/TodoList';
 import './App.css';
 
