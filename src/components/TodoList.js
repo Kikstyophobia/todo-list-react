@@ -5,6 +5,7 @@ import Todo from "./Todo";
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
 
+  // add task to list
   const addTodo = todo => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
@@ -13,6 +14,22 @@ export default function TodoList() {
 
     setTodos(newTodos);
     console.log(newTodos);
+  }
+
+  // update task on list
+  const updateTodo = (todoId, newValue) => {
+    if (!newValue.text || /^\s*$/.test(newValue.text)) {
+      return;
+    }
+
+    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
+  }
+
+  // delete task from list
+  const removeTodo = id => {
+    const removeArr = [...todos].filter(todo => todo.id !== id);
+
+    setTodos(removeArr);
   }
 
   const completeTodo = id => {
@@ -27,11 +44,13 @@ export default function TodoList() {
 
   return (
     <div>
-      <h1>What's the plan for today?</h1>
+      <h3>What's the plan for today?</h3>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}
         completeTodo={completeTodo}
+        removeTodo={removeTodo}
+        updateTodo={updateTodo}
       />
     </div>
   )
