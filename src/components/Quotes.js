@@ -1,6 +1,7 @@
-import { React, useEffect } from 'react';
+import { React, useEffect, useState } from 'react';
 
 export default function Quotes() {
+  const [quote, setQuote] = useState("");
 
   const quotes = [
     {
@@ -96,8 +97,10 @@ export default function Quotes() {
     let index = Math.floor(Math.random() * (quotes.length));
     return [quotes[index].quote, quotes[index].name];
   }
-  
-  const quote = randomizer(quotes);
+
+  useEffect(() => {
+    setQuote(randomizer(quotes));
+  }, [])
   
   return (
     <div className='quote-box'>
@@ -107,4 +110,3 @@ export default function Quotes() {
   )
 
 }
-
