@@ -14,7 +14,6 @@ export default function TodoList() {
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
-    console.log(newTodos);
   }
 
   // update task on list

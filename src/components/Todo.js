@@ -7,14 +7,14 @@ export default function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   const [edit, setEdit] = useState({
     id: null,
     value: ''
-  })
+  });
 
   const submitUpdate = value => {
     updateTodo(edit.id, value)
     setEdit({
       id: null, 
       value: ''
-    })
+    });
   }
 
   if (edit.id) {

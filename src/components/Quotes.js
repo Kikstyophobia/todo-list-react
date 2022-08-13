@@ -100,7 +100,7 @@ export default function Quotes() {
 
   useEffect(() => {
     setQuote(randomizer(quotes));
-  }, [])
+  }, []);
   
   return (
     <div className='quote-box'>
