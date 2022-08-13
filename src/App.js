@@ -6,7 +6,7 @@ import './App.css';
 function App() { 
   return (
     <div className="todo-app">
-      <h1>To Do Or Not To Do?</h1>
+      <h1>What's the plan today?</h1>
       <TodoList/>
     </div>
   );

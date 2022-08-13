@@ -59,7 +59,8 @@ export default function TodoForm(props) {
               autoComplete="off"
             />
             <button className="todo-button">Add task</button>
-          </>)
+          </>
+        )
       }
 
     </form>

@@ -1,6 +1,7 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
+import Quotes from "./Quotes";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -44,7 +45,9 @@ export default function TodoList() {
 
   return (
     <div>
-      <h3>What's the plan for today?</h3>
+      <div>
+      <Quotes/>
+      </div>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}
